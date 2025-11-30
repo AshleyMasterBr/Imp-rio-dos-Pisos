@@ -26,7 +26,7 @@
         header { background: var(--white); padding: 12px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
         header .flex { display: flex; justify-content: space-between; align-items: center; }
         
-        /* LOGO FAKE (CSS PURO - Não precisa de imagem logo.png) */
+        /* LOGO FAKE (CSS PURO) */
         .logo { 
             display: flex; align-items: center; gap: 8px;
             font-size: 1.1rem; font-weight: 900; color: var(--secondary); letter-spacing: -0.5px; text-transform: uppercase; 
@@ -211,7 +211,7 @@
                 </div>
             </div>
 
-            <a href="#" class="btn-action">
+            <a href="#" id="linkZap" class="btn-action">
                 AGENDAR VISITA <i class="fab fa-whatsapp"></i>
             </a>
             
@@ -237,6 +237,15 @@
 
             const valorFormatado = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             document.getElementById('valorFinal').innerText = valorFormatado;
+            
+            // Aqui está a configuração para o número de teste
+            const numeroZap = "5511978727719"; 
+            const modeloNome = modeloEl.options[modeloEl.selectedIndex].text;
+            const textoZap = `Olá! Tenho interesse no orçamento: ${metragem}m² de ${modeloNome.split('(')[0]} por aprox. ${valorFormatado}.`;
+            
+            const link = `https://wa.me/${numeroZap}?text=${encodeURIComponent(textoZap)}`;
+            document.getElementById('linkZap').href = link;
+            
             document.getElementById('modalResult').style.display = 'flex';
         }
 

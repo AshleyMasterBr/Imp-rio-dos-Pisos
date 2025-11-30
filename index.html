@@ -16,7 +16,7 @@
         
         /* Cores da "Império dos Pisos" */
         :root {
-            --primary: #d35400; /* Um Laranja mais "tijolo/obra" */
+            --primary: #d35400; /* Laranja tijolo */
             --secondary: #1a1a1a;
             --accent: #25D366; 
             --white: #ffffff;
@@ -26,7 +26,7 @@
         header { background: var(--white); padding: 12px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
         header .flex { display: flex; justify-content: space-between; align-items: center; }
         
-        /* LOGO FAKE (CSS PURO) */
+        /* LOGO FAKE (CSS PURO - Não precisa de imagem logo.png) */
         .logo { 
             display: flex; align-items: center; gap: 8px;
             font-size: 1.1rem; font-weight: 900; color: var(--secondary); letter-spacing: -0.5px; text-transform: uppercase; 
@@ -40,11 +40,11 @@
             display: flex; align-items: center; gap: 6px; 
         }
 
-        /* HERO SECTION */
+        /* HERO SECTION COM FUNDO REALISTA */
         .hero { 
-            /* Se não tiver fundo.jpg, vai usar um gradiente escuro elegante pra não ficar branco */
-            background: linear-gradient(rgba(20,20,20,0.8), rgba(20,20,20,0.8)), url('fundo.jpg'); 
-            background-color: #333; /* Fallback */
+            /* O CÓDIGO JÁ CHAMA A IMAGEM AQUI. VOCÊ PRECISA TER O ARQUIVO 'fundo.jpg' NA PASTA */
+            background: linear-gradient(rgba(20,20,20,0.7), rgba(20,20,20,0.7)), url('fundo.jpg'); 
+            background-color: #333; /* Cor de segurança se a imagem falhar */
             background-size: cover; background-position: center; 
             min-height: 100vh;
             display: flex; align-items: center; justify-content: center;
@@ -107,7 +107,6 @@
             font-size: 1rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             animation: pulse 2s infinite;
         }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
         
         .disclaimer { margin-top: 15px; font-size: 0.7rem; color: #777; }
 
@@ -131,7 +130,8 @@
     <header>
         <div class="container flex">
             <div class="logo">
-                <i class="fas fa-hammer"></i> <div>IMPÉRIO DOS<span>PISOS</span></div>
+                <i class="fas fa-hammer"></i> 
+                <div>IMPÉRIO DOS<span>PISOS</span></div>
             </div>
             <a href="#" class="btn-zap-header"><i class="fab fa-whatsapp"></i> <span>Falar com</span> Consultor</a>
         </div>
